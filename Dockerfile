@@ -1,9 +1,13 @@
-ARG portsconf=/etc/apache2/ports.conf
 FROM php:7.2-apache
+ARG portsconf=/etc/apache2/ports.conf
 COPY chess.conf /etc/apache2/sites-available/chess.conf
 COPY ports.conf /etc/apache2/ports.conf
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+RUN chmod -x $PWD
+# RUN apt-get install container-selinux
+RUN ls /etc/apache2
 RUN cat /etc/apache2/ports.conf
+
 RUN docker-php-ext-install mysqli
 RUN apt-get --yes update
 RUN chmod 777 /var/www/html
