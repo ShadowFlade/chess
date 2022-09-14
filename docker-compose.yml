@@ -11,6 +11,8 @@ services:
                 ./.htaccess:/var/www/html/.htaccess,
                 ./ports.conf:/var/www/html/ports.conf,
             ]
+        expose:
+            - 80
 
     db:
         image: mysql
