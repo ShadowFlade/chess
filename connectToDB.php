@@ -3,15 +3,11 @@ if(!session_id()) session_start();
 
 
 
-/* $dbhost 	= 'fdb13.biz.nf';
-$dbname		= '1852132_ch';
-$dbuser		= '1852132_ch';
-$dbpass		= ''; */
+$dbhost 	= 'localhost';
+$dbname		= 'chmlt';
+$dbuser		= 'root';
+$dbpass		= ''; 
 
-$dbhost 	= "localhost";
-$dbname		= "chmult4";
-$dbuser		= "root";
-$dbpass		= "";
  
 // database connection
 try{

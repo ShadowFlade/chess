@@ -5,7 +5,8 @@ include_once("../connectToDB.php");
 if (isset($_POST['username'])) {	
 	$username = $_POST['username'];
 	$password = sha1($_POST['password']);
-	$sql = $_db->query("SELECT * FROM users WHERE UserName='$username' AND UserPassword='$password' LIMIT 1"); // query the person
+	$sql = $_db->query("SELECT * FROM users WHERE UserName='$username' 
+	AND UserPassword='$password' LIMIT 1"); // query the person
 
 // ------- MAKE SURE PERSON EXISTS IN DATABASE ---------
 	$existCount = $sql->rowCount(); // count the row nums

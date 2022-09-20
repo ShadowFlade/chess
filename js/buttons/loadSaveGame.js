@@ -22,8 +22,7 @@ $("#lMoveSQL_submit").click(function () {
 
 $("#lSaveSQL_submit").click(function () {
 	
-	var lSaveSQL = BoardToFen(); // id=lMoveSQL finns i main.php
-	//alert(lSaveSQL);
+	var lSaveSQL = BoardToFen();
 	$.post('php_pages/lMoveSaveToSQL.php', {lSaveSQL: lSaveSQL}, function(data){ 
 		//$('#infoSQL').text(data.msg);
 		//alert(data.msg);
