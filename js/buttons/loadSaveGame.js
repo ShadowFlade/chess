@@ -1,7 +1,7 @@
 $("#lMoveSQL_submit").click(function () {
 	//alert(BoardToFen());
-	var lMoveSQL2 = $("#lMove").val(); // id=lMoveSQL finns i main.php
-	var test="if not included I get an error on live server";
+	const lMoveSQL2 = $("#lMove").val(); // id=lMoveSQL finns i main.php
+	const test="if not included I get an error on live server";
 	$.post('php_pages/loadLMoveSQL.php',{test: test},function(data){
         if (data.msg != ""){
 			ParseFen(data.msg);
@@ -22,7 +22,7 @@ $("#lMoveSQL_submit").click(function () {
 
 $("#lSaveSQL_submit").click(function () {
 	
-	var lSaveSQL = BoardToFen();
+	const lSaveSQL = BoardToFen();
 	$.post('php_pages/lMoveSaveToSQL.php', {lSaveSQL: lSaveSQL}, function(data){ 
 		//$('#infoSQL').text(data.msg);
 		//alert(data.msg);

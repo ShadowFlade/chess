@@ -1,7 +1,5 @@
 <?php 
 
-
-
 class chat {
 	private $ChatId,$ChatUserId,$ChatText,$ChatTextGameId;
 	

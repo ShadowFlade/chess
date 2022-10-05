@@ -121,7 +121,7 @@ class user{
 					}
 					?>
 						</span> is 
-						<span class="ChatMessageS" > <?php echo $available;?>
+						<span class="ChatMessageS" > <?= $available;?>
 						</span> </br>
 					<?php
 					

@@ -1,12 +1,10 @@
 <?php
 if(!session_id()) session_start();
 
-
-
-$dbhost 	= 'localhost';
-$dbname		= 'chmlt';
-$dbuser		= 'root';
-$dbpass		= ''; 
+$dbhost = 'localhost';
+$dbname	= 'chmlt';
+$dbuser	= 'root';
+$dbpass	= ''; 
 
  
 // database connection

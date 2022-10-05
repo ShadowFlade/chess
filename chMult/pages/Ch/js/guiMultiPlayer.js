@@ -125,7 +125,6 @@ function PreSearch() {
 			setTimeout( function() {StartSearch(); }, 200);
 		}
 }
-
 function MakeUserMove() {
 	if(UserMove.from != SQUARES.NO_SQ && UserMove.to != SQUARES.NO_SQ) {
 		//console.log("User Move:" + PrSq(UserMove.from) + PrSq(UserMove.to));
@@ -195,7 +194,7 @@ function flipGameOnceIfBlack() {
 			}
         });
 }
-
+//our move?
 function MakeUserMove2() {
 	$colorplayer=UserColor();
 	// if (colorplayer==1 and GameController.PlayerSide ==1) or (colorplayer==0 and GameController.PlayerSide ==0)then do everything
