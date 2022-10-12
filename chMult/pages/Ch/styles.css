@@ -1,15 +1,10 @@
-#ChatMessages{position: absolute;
-	left: 600px;
-	top: 170px;	}
-#ChatBig{position: absolute;
-	left: 600px;
-	top: 100px;	}
-
-#NewGameButton{
+#ChatMessages{
 	position: absolute;
-	left: 300px;
-	top: 20px;	
+	left: 600px;
+	top: 170px;	
 }
+
+
 
 #GameStatus {
 	position: absolute;

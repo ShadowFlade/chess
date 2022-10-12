@@ -1,6 +1,12 @@
 <?php
 session_start();
 ?>
+<?php
+	include "./chMult/classes/user.php";
+?>
+<?php
+	$isAuthorized = user::isAuthorized();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,46 +20,67 @@ session_start();
 		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 	</head>
 	<body>
-		<header>
-			<h3>JS Chess</h3>
-		</header>
-		
-		<?php include 'php_pages/loginForm.php'; ?>	
-		
-		<div id="FenInDiv">			
-			<input type="text" id="fenIn"/>		
-			<button type="button" id="SetFen">Set Position</button>	
-		</div>	
-		<div id="Board">
-		</div>
-		<div id="CurrentFenDiv">
-			<span id="currentFenSpan"></span>		
-		</div>	
-		<div id="SaveLoadOutput" style="display:none">		
-			<div id="lMove"></div>
-			<input type="submit" id="lMoveSQL_submit" value="Start saved game">	
-			<div id="lMoveSQL_data" ></div>
-			<br/>
-			<input type="submit" id="lSaveSQL_submit" value="Save board">	
-			<div id="lSaveSQL_data" ></div>
-			<br/>
-			<input type="submit" id="multiplayer_submit" 
-			onclick="parent.location='chMult/pages/UserLogin.php'" 
-			value="Multiplayer game">				
-		</div>
-		
-		<span id="GameStatus"></span>
-		<button type="button" id="NewGameButton">New Game</button><br/>
+		<div class="container">
+			<header>
+				<h3>JS Chess</h3>
+			</header>
 
-		<!--This div not outputted but needed to work  -->	
-		<?php include 'php_pages/notOutputted.php'; ?>	
-		<!--   -->
-		
-		<footer>
-			<div class="col-sm-4" style="background-color:lavender;">
-			&copy; ronnyalex.org 2015. All rights reserved.
+
+			<div class="main__chess-position">
+				<div id="FenInDiv">
+					<input type="text" id="fenIn"/>		
+					<button type="button" id="SetFen">Set Position</button>	
+				</div>
 			</div>
-		</footer>
+
+			<div class="game">
+
+				<div class="main__board">
+					<div id="Board">
+					</div>
+				</div>
+				<div class="buttons">
+
+					<?php if($isAuthorized):?>	
+						<div id="SaveLoadOutput">		
+							<div id="lMove"></div>
+							<button type="button" id="NewGameButton">New Game</button><br/>
+							<input type="submit" id="lMoveSQL_submit" value="Start saved game">	
+							<div id="lMoveSQL_data" ></div>
+							<input type="submit" id="lSaveSQL_submit" value="Save board">	
+							<div id="lSaveSQL_data" ></div>
+							<input type="submit" id="multiplayer_submit" 
+							onclick="parent.location='chMult/pages/UserLogin.php'" 
+							value="Multiplayer game">				
+						</div>
+					<?php endif;?>
+
+					<div class="main__auth">
+						<?php include 'php_pages/loginForm.php'; ?>
+					</div>
+
+				</div>
+
+
+			</div>
+
+			<div id="CurrentFenDiv">
+				<span id="currentFenSpan"></span>		
+			</div>	
+
+			
+			<span id="GameStatus"></span>
+
+			<!--This div not outputted but needed to work  -->	
+			<?php include 'php_pages/notOutputted.php'; ?>	
+			<!--   -->
+			
+			<footer>
+				<div  style="background-color:lavender;">
+					&copy; ronnyalex.org 2015. All rights reserved.
+				</div>
+			</footer>
+		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>		

@@ -23,20 +23,32 @@
 	</head>
 	<body>
 		<header>
-			<h3>JS Chess</h3>			
-			
+			<h1>JS Chess</h3>
 		</header>
-		   
-		<input type="submit" onclick="parent.location='../indexMult.php'" id="deleteGame-submit" value="New Opponent">
-		<h2>Welcome <span style="color:green"><?php echo $_SESSION['UserName'];?>! </span>You are playing against <span style="color:red"><?php echo $_SESSION['Opponent'];?>! </span>
+		<h2>
+			Welcome 	
+			<span style="color:green">
+				<?=$_SESSION['UserName'];?>! 
+			</span>
+			You are playing against 
+			<span style="color:red">
+				<?= $_SESSION['Opponent'];?>! 
+			</span>
 		</h2>	
-		<div id="FenInDiv" style="display:none;>			
-			<input type="text" id="fenIn"/>		
-			<button type="button" id="SetFen">Set Position</button>	
-		</div>	
+
 		<div id="ThinkingImageDiv">		
 		</div>
-		<div id="Board">
+		<div class="game">
+			<div class="mult__interactions">
+				<div id="Board"></div>
+				<div id="ChatBig"> 
+					<span style="color:green">Chat</span><br/>
+					<textarea id="ChatText" name="ChatText"></textarea>
+				</div>				
+				<input type="submit" onclick="parent.location='../indexMult.php'" id="deleteGame-submit" value="New Opponent">
+				<button type="button" id="NewGameButton">New Game</button><br/>
+			</div>
+		
 		</div>
 		<div id="CurrentFenDiv" >
 			<span id="currentFenSpan" style="display:none;></span>		
@@ -46,11 +58,7 @@
 		<div id="AvailablePlayers"></div>
 		
 		<div id="ChatMessages"></div>
-		<div id="ChatBig"> 
-			<span style="color:green">Chat</span><br/>
-			<textarea id="ChatText" name="ChatText"></textarea>
-		</div>
-		<button type="button" id="NewGameButton">New Game</button><br/>
+
 		<span id="GameStatus"></span>
 <!--This div not outputted but needed to work  -->			
 		<div id="EngineOutput"><br/>

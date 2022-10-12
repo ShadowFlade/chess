@@ -60,6 +60,9 @@ class user{
 		'UserPassword'=>$this->getUserPassword() 
 		));	
 	}
+	public static function isAuthorized(){
+		return isset($_SESSION["username"]);
+	}
 	public function UserLogin(){
 		include "../../connectToDB.php";
 		$UserRequest=$_db->prepare("SELECT * FROM users WHERE UserName=:UserName AND UserPassword=:UserPassword");

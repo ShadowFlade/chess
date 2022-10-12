@@ -1,5 +1,7 @@
 <?php 
 	include_once("../connectToDB.php");	
+	include "../chMult/utils.php";
+
 	$username=$_SESSION['username'];
 	$sql = $_db->query("SELECT * FROM users WHERE UserName='$username' LIMIT 1"); // query the person
 	$existCount = $sql->rowCount(); // count the row nums
@@ -14,6 +16,7 @@
         }
 		$output = array("msg"=>"$latestMove", "loggedin"=>"true");
     } 
+	arshow($output);
 	echo json_encode($output);
 
 ?>

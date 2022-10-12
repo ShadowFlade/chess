@@ -9,7 +9,7 @@
 	*/
 	session_start();
 	
-	
+	include "../utils.php";
 	include "../classes/user.php";
 	/* This is to delete gameId if gameId exists for a user and its opponent */
 	$user = new user();
@@ -28,11 +28,14 @@
 	
 	</head>
 	<body>
-	<h2>Welcome <span style="color:green"><?php
-	echo $_SESSION['UserName'];
-	?></span></h2>
+	<h2>
+		Welcome 
+		<span style="color:green">
+			<?php	echo $_SESSION['UserName'];?>
+		</span>
+	</h2>
 	
-	
+
 		<div id="AvailablePlayers">
 		</div>
 		

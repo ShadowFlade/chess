@@ -1,7 +1,16 @@
-#FenInDiv {
-	position: relative;
-	left: 60px;
+.container{
+	padding-inline:2rem;
 }
+.mult__interactions{
+	display:flex;
+}
+.auth__item{
+	margin-bottom:2rem;
+}
+.auth__item:last-child{
+	margin-bottom: 0;
+}
+
 
 #fenIn { 
  width: 480px;
@@ -22,31 +31,19 @@
 
 #CurrentFenDiv {
 	position: relative;
-	left: 60px;
 	margin-top: 40px;
 }
 
 #Board {
 	position: relative;
-	left: 60px;
-	top: 20px;
+	left: 0px;
+	top: 0px;
 	width: 480px; /*480*/
 	height: 480px;
 	border-style:solid;
     border-width:2px;
 }
 
-#SaveLoadOutput {
-	position: absolute;
-	left: 600px;
-	top: 120px;	
-}
-
-#NewGameButton{
-	position: absolute;
-	left: 600px;
-	top: 300px;	
-}
 
 #GameStatus {
 	position: absolute;
@@ -80,16 +77,6 @@ animation-iteration-count:infinite;
 }
 
 
-#form_container {
-	position: absolute;
-	left: 750px;
-	top: 250px;	
-}
-#log{
-	position: absolute;
-	top: 120px;
-	left: 750px;
-}
 #EngineOutput {
 	position: absolute;
 	left: 600px;
@@ -176,3 +163,21 @@ animation-iteration-count:infinite;
 
 
 
+.game{
+    display:flex;
+    justify-content:space-between;
+}
+
+
+.buttons button, .buttons input{
+	margin-bottom:1.5rem;
+}
+#SaveLoadOutput + .main__auth {
+	margin-top:4rem;
+}
+#SaveLoadOutput button:last-child{
+	margin-bottom:0;
+}
+.game{
+	padding:2rem 0;
+}
